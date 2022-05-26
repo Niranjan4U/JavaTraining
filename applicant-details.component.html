@@ -1,0 +1,172 @@
+<h2> Showing User Details </h2>
+<input type="number" [(ngModel)]="anyNumber" (input)="loadSingleApplicantDetails(anyNumber)">
+<button (click)="loadSingleApplicantDetails(anyNumber)">Load Single User Details</button>
+  
+<div class="h1" align="right"> 
+<button class="btn">Home</button> 
+<button class="btn">Logout</button>
+</div>
+<table>
+  <div class="h">
+    <h3>APPLICANT DETAILS</h3>
+   </div>
+ 
+<table  border="5" [cellPadding]="10" >
+    <tr><th> ID </th>  
+        <th> APPLIED FOR </th>
+        <th> APPLICATION DATE </th>
+    </tr>
+    <tr>
+      <td>{{applicantDetails.applicantId}}</td>
+      <td>{{applicantDetails.applyingFor}}</td>
+      <td>{{applicantDetails.applicationDate}}</td>
+    </tr>
+</table>
+<div class="h">
+  <h3>PERSONAL DETAILS</h3>
+ </div>
+<div class="row">  
+  <div class="column">
+    <table border="5"> 
+    <tr>
+        <th  align="right"> TITLE </th> 
+        <th> FIRST NAME </th> 
+        <th> MIDDLE NAME </th> 
+        <th> LAST NAME </th> 
+    </tr>
+    <tr>
+        <td>{{applicantDetails.title}}</td>
+        <td>{{applicantDetails.firstName}}</td>
+        <td>{{applicantDetails.middleName}}</td>
+        <td>{{applicantDetails.lastName}}</td>
+    </tr>
+    </table>   
+    <div class="column">
+      <table border="5">
+        <tr>
+           <th>DATE OF BIRTH </th>
+           <th>GENDER</th> 
+           <th>MARITAL STATUS</th>
+           <th>RELIGION</th>
+        </tr>
+        <tr><td>{{applicantDetails.dateOfBirth}}</td>
+            <td>{{applicantDetails.gender}}</td>
+            <td>{{applicantDetails.maritalStatus}}</td>
+            <td>{{applicantDetails.religion}}</td>
+        </tr> 
+      </table>
+</div> 
+</div>
+</div>
+
+<div class="row">  
+  <div class="column">
+    <table border="5">    
+       <tr> 
+         <th> FATHER NAME</th>
+         <th> MOTHER MAIDEN NAME</th>
+         <th> SPOUSE NAME</th>
+        </tr>
+        <tr><td>{{applicantDetails.fatherName}}</td>
+          <td>{{applicantDetails.motherName}}</td>
+          <td>{{applicantDetails.spouseName}}</td>
+        </tr> 
+    </table>  
+  </div>
+  <div class="column">
+    <table border="5"> 
+     <tr> 
+      <th> ID TYPE </th> 
+      <th> ID NUMBER </th>
+      <th> PANCARD </th>  
+    </tr>
+    <tr><td>{{applicantDetails.idType}}</td>
+      <td>{{applicantDetails.idNumber}}</td>
+      <td>{{applicantDetails.panCard}}</td>
+    </tr>
+  </table> 
+</div> 
+</div>
+<div class="row"> 
+  <div class="column">
+  <table border="5">
+    <tr>
+      <th> PHONE NUMBER </th>
+      <th> EMAIL </th>  
+      <th> ADDRESS </th>
+    </tr>  
+    <tr>
+      <td>{{applicantDetails.phoneNumber}}</td>
+      <td>{{applicantDetails.email}}</td>
+      <td>{{applicantDetails.address}}</td>
+    </tr>
+  </table> 
+  </div> 
+</div>
+<div class="h">
+  <h3>ADDITIONAL DETAILS</h3>
+ </div>
+<div class="row"> 
+  <div class="column">
+    <table border="5">
+    <tr>
+      <th> NOMINEE NAME </th>
+      <th> NOMINEE DOB</th>
+      <th> NOMINEE RELATIONSHIP </th>
+      <th> NOMINEE ADDRESS </th>
+    </tr>  
+    <tr>
+      <td>{{applicantDetails.nomineeName}}</td>
+      <td>{{applicantDetails.nomineeDOB}}</td>
+      <td>{{applicantDetails.nomineeRelationship}}</td>
+      <td>{{applicantDetails.nomineeAddress}}</td>
+    </tr>
+  </table>
+  </div>
+</div>
+<div class="row"> 
+  <div class="column">
+    <table border="5" >
+  <tr> 
+    <th> GUARDIAN NAME</th> 
+    <th> GUARDIAN ADDRESS</th>
+  </tr>
+  <tr>
+    <td>{{applicantDetails.guardianName}}</td>
+    <td>{{applicantDetails.guardianAddress}}</td>
+  </tr>
+    </table>
+  </div>
+  <div class="column">
+    <table border="5" >
+      <tr> 
+        <th> EDUCATIONAL QUALIFICATION </th>
+        <th> OCCUPATION TYPE</th>
+        <th> ANNUAL INCOME </th>
+      </tr>
+      <tr>
+      <td>{{applicantDetails.eduQualification}}</td>
+      <td>{{applicantDetails.occupation}}</td>
+      <td>{{applicantDetails.annualIncome}}</td>
+    </tr>
+    </table>
+  </div> 
+</div>
+	<div class="row"> 
+    <div class="column">
+      <table>
+        <tr align="center"> 
+          <th> REMARKS </th>
+        </tr>
+        <tr align="center">
+          <td>{{applicantDetails.remarks}}</td>
+        </tr> 
+      </table>
+    </div>
+</div>
+  
+<div class="h1" align="center"> 
+  <button class="btn" (click)="editStatus(applicantDetails)">APPROVE  </button> 
+  <button class="btn" (click)="editStatus(applicantDetails)">REJECT</button>
+</div>  
+    
