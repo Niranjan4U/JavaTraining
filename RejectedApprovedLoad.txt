@@ -1,0 +1,24 @@
+service file
+
+ 
+    loadApplicantDetailByStatusService(x:string) : Observable<ApplicantDetails>  {
+      return this.myHttp.get<ApplicantDetails>("http://localhost:8080/applicants/"+x);   
+    }
+
+
+=========================
+home.component.ts
+
+ loadByStatus(x : string) {
+    this.ads.loadApplicantDetailByStatusService(x).subscribe(
+      (data) => {
+          this.applicantDetails = data;
+        
+          //console.log(this.message);
+        },
+        (err) => {
+          console.log(err);
+        }
+       
+    );
+  }
